@@ -8,7 +8,7 @@ This folder is part of **Armstrong Level 4 – Week 16: Unit Testing with Jest**
   - Configures an Express app with `/users` routes.
   - Exports `{ app }` so Jest + Supertest can send requests without starting the server as a separate process.
 - User-related files (`config/db.js`, `models/user.model.js`, `controllers/user.controller.js`, `routes/user.routes.js`) define the API.
-- `tests/user.test.js`:
+- `__tests__/user.test.js`:
   - Contains Jest + Supertest tests for the user endpoints.
   - Asserts on status codes and response bodies.
 - `coverage/`:

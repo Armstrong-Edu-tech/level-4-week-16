@@ -9,11 +9,13 @@ test("GET /users -> should return users", async () => {
         { _id: "1", name: "Amr", email: "amr@test.com" }
     ]);
 
-    const res = await request(app).get("/users");
-
-    expect(res.statusCode).toBe(200);
-    expect(res.body.data.length).toBe(1);
-    expect(User.find).toHaveBeenCalled();
+    await request(app)
+        .get("/users")
+        .expect(200)
+        .expect((res) => {
+            expect(res.body.data.length).toBe(1);
+            expect(User.find).toHaveBeenCalled();
+        });
 });
 
 test("POST /users -> should create user", async () => {
@@ -22,16 +24,19 @@ test("POST /users -> should create user", async () => {
         name: "Amr",
         email: "amr@test.com"
     });
-    const res = await request(app)
+
+    await request(app)
         .post("/users")
         .send({
             name: "Amr",
             email: "amr@test.com"
+        })
+        .expect(201)
+        .expect((res) => {
+            expect(res.body.data.name).toBe("Amr");
+            expect(User.create).toHaveBeenCalledWith({
+                name: "Amr",
+                email: "amr@test.com"
+            });
         });
-    expect(res.statusCode).toBe(201);
-    expect(res.body.data.name).toBe("Amr");
-    expect(User.create).toHaveBeenCalledWith({
-        name: "Amr",
-        email: "amr@test.com"
-    });
 });

@@ -10,7 +10,7 @@ This folder belongs to **Armstrong Level 4 – Week 16: Unit Testing with Jest**
   - Mounts user routes under `/users`.
   - Exports `{ app }` so tests can create HTTP requests without starting a real server process.
 - `config/db.js`, `models/user.model.js`, `controllers/user.controller.js`, and `routes/user.routes.js` (in this folder) define the user API endpoints.
-- `tests/user.test.js`:
+- `__tests__/user.test.js`:
   - Uses **Supertest** to make requests like `GET /users/...`.
   - Asserts on HTTP status codes and JSON responses.
   - Optionally mocks database access for isolated tests.

@@ -10,7 +10,7 @@ This folder is part of **Armstrong Level 4 – Week 16: Unit Testing with Jest**
     - Throws an error if no user is found
     - Returns the user’s `name` when found
 - `models/user.model.js` defines the `User` Mongoose model used by the logic.
-- `tests/userLogic.test.js` (provided in `tests/`) typically:
+- `__tests__/userLogic.test.js` typically:
   - Mocks `User.findById`
   - Tests the successful path (returns a name)
   - Tests the failure path (throws "User not found")

@@ -11,7 +11,7 @@ This folder is part of **Armstrong Level 4 – Week 16: Unit Testing with Jest**
   - Exports `{ app }` for Jest + Supertest tests.
 - `config/db.js`, `models/product.model.js`, `controllers/product.controller.js`, `routes/product.routes.js`:
   - Define the product schema, business logic, and HTTP routes.
-- `tests/product.test.js`:
+- `__tests__/product.test.js`:
   - Uses Jest + Supertest to test product CRUD operations.
   - Typically mocks Mongoose operations to keep tests fast and isolated.
 - `coverage/`:

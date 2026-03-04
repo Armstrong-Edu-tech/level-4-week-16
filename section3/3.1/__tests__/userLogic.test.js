@@ -3,6 +3,10 @@ const { getUserNameLogic } = require("../userLogic");
 
 jest.mock("../models/user.model");
 
+beforeEach(() => {
+    jest.clearAllMocks(); 
+});
+
 test('should return "Ali" from the mock without connecting to MongoDB', async () => {
     User.findById.mockResolvedValue({
         _id: "123",
